@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user1"
+            android:title="Meu Perfil" />
+        <item
+            android:id="@+id/nav_novidades"
+            android:icon="@drawable/favorites"
+            android:title="Novidades" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/pricetag"
+            android:title="Promoções" />
+        <item
+            android:id="@+id/nav_manag2"
+            android:icon="@drawable/icecream"
+            android:title="Sobremesas" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/settings2"
+            android:title="Filtros" />
+        <item
+            android:id="@+id/reserva"
+            android:icon="@drawable/table"
+            android:title="Reservas" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/placeholder"
+            android:title="Próximos" />
+    </group>
+
+    <item android:title="Siga-nos nas Redes Sociais">
+        <menu>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/facebook"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_send2"
+                android:icon="@drawable/instagram"
+                android:title="Instagran" />
+            <item
+                android:id="@+id/nav_send22"
+                android:icon="@drawable/twitter"
+                android:title="Twitter" />
+
+
+        </menu>
+    </item>
+
+</menu>
