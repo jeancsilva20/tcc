@@ -1,37 +1,52 @@
 package com.example.u16394.snacktime.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-
+import android.support.v7.widget.LinearLayoutManager;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import com.example.u16394.snacktime.R;
-
 import java.util.ArrayList;
 
 
 public class NovidadesContentActivity extends AppCompatActivity  {
+    ListView lista;
+    ListView lista2;
+    ArrayList<UserModel> objLista = new ArrayList<>();
 
-    ArrayList<UserModel> lista;
-    RecyclerView listaView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acitivity_content_novidades);;
-        listaView = (RecyclerView)findViewById(R.id.list_novidades);
-        listaView.setAdapter(new NovidadesAdapter(lista));
+        setContentView(R.layout.acitivity_content_novidades);
+        lista = (ListView) findViewById(R.id.teste);
+        lista2 = (ListView) findViewById(R.id.teste2);
+
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+        objLista.add(new UserModel("Juca","Teste","teste"));
+        objLista.add(new UserModel("Joca","Teste","teste"));
+
+        ArrayAdapter<UserModel> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, objLista);
+        lista2.setHasTransientState(true);
+        lista.setAdapter(adapter);
+        lista2.setAdapter(adapter);
+
+        }
     }
 
-    /*private void setupRecycler() {
-        // Para criar um layout de uma lista.
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        mRecyclerView.setLayoutManager(layoutManager);
-        String uriPath = "android.resource://"+  getPackageName() + "/drawable/ic_pizza";
-        listaA.add(new UserModel("teste","teste",uriPath));
-        listaA.add(new UserModel("teste2","teste2",uriPath));
-        listaA.add(new UserModel("teste3","teste3",uriPath));
-        mAdapter = new CardAdapter(listaA);
-        mRecyclerView.setAdapter(mAdapter);
-
-    }*/
-
-}

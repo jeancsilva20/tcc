@@ -1,8 +1,5 @@
 package com.example.u16394.snacktime.activities;
 
-/**
- * Created by rafael on 01/12/16.
- */
 
 public class UserModel {
 
@@ -32,6 +29,5 @@ public class UserModel {
     @Override
     public String toString() {
         return this.mDescription+this.mName+this.mImage;
-
     }
 }
