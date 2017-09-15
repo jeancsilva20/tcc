@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txtlatitude"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jeanc.gpsbolado.MainActivity">
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Status:" />
+
+    <EditText
+        android:id="@+id/edtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtStatus"
+        android:layout_alignStart="@+id/txtStatus"
+        android:layout_below="@+id/txtStatus"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <view
+        android:id="@+id/view3"
+        class="android.support.v4.view.ViewPager"
+        id="@+id/view2"
+        layout_alignLeft="@+id/editText"
+        layout_alignStart="@+id/editText"
+        layout_below="@+id/editText"
+        layout_marginTop="11dp"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/edtStatus"
+        android:layout_alignStart="@+id/edtStatus"
+        android:layout_below="@+id/edtStatus"
+        android:background="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/edtlatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtlatitude"
+        android:layout_alignStart="@+id/txtlatitude"
+        android:layout_below="@+id/txtlatitude"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignRight="@+id/view3"
+        android:layout_alignEnd="@+id/view3" />
+
+    <TextView
+        android:id="@+id/txtlatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/view3"
+        android:layout_alignStart="@+id/view3"
+        android:layout_below="@+id/view3"
+        android:layout_marginTop="18dp"
+        tools:text="Latitude" />
+
+    <TextView
+        android:id="@+id/txtLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtlatitude"
+        android:layout_alignStart="@+id/edtlatitude"
+        android:layout_below="@+id/edtlatitude"
+        android:text="Longitude" />
+
+    <EditText
+        android:id="@+id/edtLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/txtLongitude"
+        android:layout_alignLeft="@+id/txtLongitude"
+        android:layout_alignStart="@+id/txtLongitude"
+        android:layout_alignRight="@+id/edtlatitude"
+        android:layout_alignEnd="@+id/edtlatitude" />
+
+    <view
+        class="android.support.v4.view.ViewPager"
+        id="@+id/view5"
+        layout_alignLeft="@+id/edtLongitude"
+        layout_alignStart="@+id/edtLongitude"
+        layout_centerVertical="true"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/edtLongitude"
+        android:layout_alignStart="@+id/edtLongitude"
+        android:layout_below="@+id/edtLongitude"
+        android:background="@color/colorPrimary"
+        android:id="@+id/view6" />
+
+    <Button
+        android:id="@+id/btnOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edtStatus"
+        android:layout_alignRight="@+id/edtStatus"
+        android:layout_below="@+id/view6"
+        android:layout_marginTop="15dp"
+        android:text="On/OFF" />
+
+</RelativeLayout>

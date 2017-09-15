@@ -56,16 +56,16 @@ public class NovidadesContentActivity extends AppCompatActivity  {
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
 
         horizontalList=new ArrayList<>();
-        horizontalList.add("horizontal 1");
-        horizontalList.add("horizontal 2");
-        horizontalList.add("horizontal 3");
-        horizontalList.add("horizontal 4");
-        horizontalList.add("horizontal 5");
-        horizontalList.add("horizontal 6");
-        horizontalList.add("horizontal 7");
-        horizontalList.add("horizontal 8");
-        horizontalList.add("horizontal 9");
-        horizontalList.add("horizontal 10");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
+        horizontalList.add("Pizza");
         horizontalAdapter=new HorizontalAdapter(horizontalList);
 
         LinearLayoutManager horizontalLayoutManagaer
