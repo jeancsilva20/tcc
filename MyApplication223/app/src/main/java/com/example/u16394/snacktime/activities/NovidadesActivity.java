@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,7 +30,7 @@ import java.util.List;
 public class NovidadesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView lista;
-    private ArrayList<CategoriaModel> objLista = new ArrayList<>();
+    private ArrayList<CategoriaListaModel> objLista = new ArrayList<>();
     private RecyclerView horizontal_recycler_view;
     private ArrayList<CategoriaModel> horizontalList;
     private NovidadesActivity.HorizontalAdapter horizontalAdapter;
@@ -52,9 +53,8 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
 
     public void criarGrid(){
         String uriImgPath = "android.resource://"+  getPackageName() + "/drawable/";
-        //lista = (ListView) findViewById(R.id.teste);
-        //objLista.add(new CategoriaModel("Juca","Teste","teste", uriImgPath+"empresa"));
-        //objLista.add(new CategoriaModel("Joca","Teste","teste", uriImgPath+"empresa"));
+        lista = (ListView) findViewById(R.id.teste);
+        objLista.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
 
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
 
@@ -73,8 +73,8 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         horizontal_recycler_view.setLayoutManager(horizontalLayoutManagaer);
         horizontal_recycler_view.setAdapter(horizontalAdapter);
 
-        //ArrayAdapter<CategoriaModel> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, objLista);
-        //lista.setAdapter(adapter);
+        ArrayAdapter<CategoriaListaModel> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, objLista);
+        lista.setAdapter(adapter);
     }
 
     public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
