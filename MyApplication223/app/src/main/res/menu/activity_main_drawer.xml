@@ -3,13 +3,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_profile"
+            android:id="@+id/nav_main"
             android:icon="@drawable/user1"
             android:title="Meu Perfil" />
         <item
-            android:id="@+id/nav_novidades"
+            android:id="@+id/nav_categorias"
             android:icon="@drawable/favorites"
-            android:title="Novidades" />
+            android:title="Categorias" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/pricetag"

@@ -44,7 +44,7 @@ public class SplashActivity extends AppCompatActivity  {
                    }
                },2500);
            }
-       },3000);
+       },30);
     }
     @Override
     protected void onStart() {
