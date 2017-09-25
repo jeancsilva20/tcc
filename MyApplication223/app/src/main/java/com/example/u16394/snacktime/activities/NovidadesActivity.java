@@ -30,10 +30,13 @@ import java.util.List;
 public class NovidadesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView lista;
-    private ArrayList<CategoriaListaModel> objLista = new ArrayList<>();
     private RecyclerView horizontal_recycler_view;
+    private RecyclerView vertical_recycler_view;
     private ArrayList<CategoriaModel> horizontalList;
+    private ArrayList<CategoriaListaModel> verticalList;
     private NovidadesActivity.HorizontalAdapter horizontalAdapter;
+    private NovidadesActivity.VerticalAdapter verticalAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +56,25 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
 
     public void criarGrid(){
         String uriImgPath = "android.resource://"+  getPackageName() + "/drawable/";
-        lista = (ListView) findViewById(R.id.teste);
-        objLista.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
 
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
+        vertical_recycler_view =(RecyclerView) findViewById(R.id.vertical_recycler_view);
 
+        verticalList=new ArrayList<>();
         horizontalList=new ArrayList<>();
+
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalAdapter= new NovidadesActivity.VerticalAdapter(verticalList);
+
         horizontalList.add(new CategoriaModel("Pizzas","Teste", uriImgPath+"ic_pizza"));
         horizontalList.add(new CategoriaModel("Lanches","Teste", uriImgPath+"hamburguer"));
         horizontalList.add(new CategoriaModel("Mexicana","Teste", uriImgPath+"mexicana"));
@@ -73,9 +89,53 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         horizontal_recycler_view.setLayoutManager(horizontalLayoutManagaer);
         horizontal_recycler_view.setAdapter(horizontalAdapter);
 
-        ArrayAdapter<CategoriaListaModel> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, objLista);
-        lista.setAdapter(adapter);
+        LinearLayoutManager verLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        vertical_recycler_view.setLayoutManager(verLinearLayoutManager);
+        vertical_recycler_view.setAdapter(verticalAdapter);
+
+
     }
+
+    public class VerticalAdapter extends RecyclerView.Adapter<VerticalAdapter.MyViewHolder> {
+
+        private List<CategoriaListaModel> verticalList;
+        public class MyViewHolder extends RecyclerView.ViewHolder {
+            public TextView txtView;
+            public TextView txtView2;
+
+            public MyViewHolder(View view) {
+                super(view);
+                txtView = (TextView) view.findViewById(R.id.textView6);
+                txtView2 = (TextView) view.findViewById(R.id.textView7);
+            }
+        }
+
+        public VerticalAdapter(List<CategoriaListaModel> verticalList) {
+            this.verticalList = verticalList;
+        }
+
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.vertical_item_view, parent, false);
+
+            return new MyViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(final MyViewHolder holder, final int position) {
+            holder.txtView.setText(verticalList.get(position).getName());
+            holder.txtView2.setText(verticalList.get(position).getDescription());
+        }
+
+        @Override
+        public int getItemCount() {
+            return verticalList.size();
+        }
+    }
+
+
+
 
     public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
 

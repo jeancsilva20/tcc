@@ -16,16 +16,12 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/horizontal_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="200dp" />
 
-        />
-
-    <ListView
-        android:id="@+id/teste"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/vertical_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/horizontal_recycler_view" />
 
 </RelativeLayout>
