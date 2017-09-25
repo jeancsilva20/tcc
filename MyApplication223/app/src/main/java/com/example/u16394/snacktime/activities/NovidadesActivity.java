@@ -125,6 +125,7 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int position) {
             holder.txtView.setText(verticalList.get(position).getName());
+            holder.txtView.setTextSize(25);
             holder.txtView2.setText(verticalList.get(position).getDescription());
         }
 
