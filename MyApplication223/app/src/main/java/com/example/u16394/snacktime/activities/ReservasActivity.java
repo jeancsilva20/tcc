@@ -1,6 +1,5 @@
 package com.example.u16394.snacktime.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -9,24 +8,39 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.u16394.snacktime.R;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button btncadastrar;
+
+public class ReservasActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Button hora;
+    private Button data;
+    private Spinner local;
+    private String[] array_spinner;
+    private String[] array_spinner2;
+    private Spinner restaurante;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reservas);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -36,18 +50,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        btncadastrar = (Button)findViewById(R.id.btncadastrar);
-        btncadastrar.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                cadastrar();
+
+        data = (Button)findViewById(R.id.Data);
+        data.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder newAlert = new AlertDialog.Builder(ReservasActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.data, null);
+                newAlert.setView(mView);
+                AlertDialog dialog = newAlert.create();
+                dialog.show();
             }
         });
+        hora = (Button)findViewById(R.id.hora);
+        hora.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder newAlert = new AlertDialog.Builder(ReservasActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.hora, null);
+                newAlert.setView(mView);
+                AlertDialog dialog = newAlert.create();
+                dialog.show();
+            }
+        });
+
+        array_spinner=new String[4];
+        array_spinner[0]="Parque Dom Pedro";
+        array_spinner[1]="Galerias Shopping";
+        array_spinner[2]="Iguatemi Campinas";
+        array_spinner[3]="Outlet Premium";
+        local = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, array_spinner);
+        local.setAdapter(adapter);
+
+        array_spinner2=new String[4];
+        array_spinner2[0]="Outback";
+        array_spinner2[1]="Applebee's";
+        array_spinner2[2]="Big Jack";
+        array_spinner2[3]="Joe Leo's";
+        restaurante = (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, array_spinner2);
+        restaurante.setAdapter(adapter2);
+
     }
 
-    public void cadastrar(){
-        Intent it = new Intent(MainActivity.this,CadastroActivity.class);
-        startActivity(it);
-    }
+
 
     @Override
     public void onBackPressed() {
@@ -72,16 +117,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
-            AlertDialog.Builder newAlert = new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder newAlert = new AlertDialog.Builder(ReservasActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.novo_popup, null);
             ImageView mImagem = (ImageView) findViewById(R.id.imageView);
             newAlert.setView(mView);
             AlertDialog dialog = newAlert.create();
             dialog.show();
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -91,32 +137,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_main) {
-            Intent it = new Intent(MainActivity.this, MainActivity.class);
+            Intent it = new Intent(ReservasActivity.this, MainActivity.class);
             startActivity(it);
         }else if (id == R.id.nav_categorias) {
-            Intent it = new Intent(MainActivity.this,NovidadesActivity.class);
+            Intent it = new Intent(ReservasActivity.this,NovidadesActivity.class);
             startActivity(it);
         } else if (id == R.id.nav_promocoes) {
-            Intent it = new Intent(MainActivity.this,PromocoesActivity.class);
+            Intent it = new Intent(ReservasActivity.this,PromocoesActivity.class);
             startActivity(it);
         } else if (id == R.id.nav_filtros) {
-            Intent it = new Intent(MainActivity.this,FiltrosActivity.class);
+            Intent it = new Intent(ReservasActivity.this,FiltrosActivity.class);
             startActivity(it);
         }
-        else if (id == R.id.reserva) {
-            Intent it = new Intent(MainActivity.this,ReservasActivity.class);
-            startActivity(it);
-        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-         /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
 }

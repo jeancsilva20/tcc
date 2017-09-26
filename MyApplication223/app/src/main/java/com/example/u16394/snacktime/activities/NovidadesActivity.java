@@ -56,19 +56,19 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
         vertical_recycler_view =(RecyclerView) findViewById(R.id.vertical_recycler_view);
 
-        verticalList=new ArrayList<>();
         horizontalList=new ArrayList<>();
 
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
-        verticalList.add(new CategoriaListaModel("name","description","imagem","Id","Telefone"));
+        verticalList=new ArrayList<>();
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
+        verticalList.add(new CategoriaListaModel("name","horario","imagem","Id","Telefone"));
         verticalAdapter= new NovidadesActivity.VerticalAdapter(verticalList);
 
         horizontalList.add(new CategoriaModel("Pizzas","Teste", uriImgPath+"ic_pizza"));
@@ -209,7 +209,6 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_main) {
             Intent it = new Intent(NovidadesActivity.this, MainActivity.class);
             startActivity(it);

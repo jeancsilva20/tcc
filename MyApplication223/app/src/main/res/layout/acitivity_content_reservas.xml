@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:background="@color/colorSlogan"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.u16394.snacktime.activities.ReservasActivity"
+    tools:showIn="@layout/app_bar_reservas">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/textView8"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local:"
+            android:textSize="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView528"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lugares:"
+            android:textSize="20dp"
+            android:layout_marginTop="39dp"
+            android:layout_below="@+id/editText3"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner2"
+            android:layout_marginTop="26dp"
+            android:text="Restaurante:"
+            android:textSize="20dp" />
+
+        <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Horário"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:id="@+id/hora"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/Data"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Data"
+        android:textColor="#ffffff"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/spinner3"
+        android:layout_alignParentStart="true" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Confirmar"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/button3" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21:00 PM"
+            android:ems="10"
+            android:inputType="time"
+            android:layout_below="@+id/hora"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="9dp" />
+
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="30/09/2017"
+            android:inputType="date"
+            android:layout_below="@+id/Data"
+            android:layout_alignParentStart="true" />
+
+
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
