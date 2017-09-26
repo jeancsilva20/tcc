@@ -16,13 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.u16394.snacktime.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +33,6 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
     private ArrayList<CategoriaListaModel> verticalList;
     private NovidadesActivity.HorizontalAdapter horizontalAdapter;
     private NovidadesActivity.VerticalAdapter verticalAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +88,6 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         LinearLayoutManager verLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         vertical_recycler_view.setLayoutManager(verLinearLayoutManager);
         vertical_recycler_view.setAdapter(verticalAdapter);
-
-
     }
 
     public class VerticalAdapter extends RecyclerView.Adapter<VerticalAdapter.MyViewHolder> {
@@ -116,9 +110,7 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.vertical_item_view, parent, false);
-
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vertical_item_view, parent, false);
             return new MyViewHolder(itemView);
         }
 
@@ -134,9 +126,6 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
             return verticalList.size();
         }
     }
-
-
-
 
     public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
 
