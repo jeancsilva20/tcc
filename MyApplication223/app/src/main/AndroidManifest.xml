@@ -8,7 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.CadastroActivity"></activity>
+        <activity android:name=".activities.CadastroActivity"
+            android:label="Cadastrar">
+        </activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
@@ -28,7 +30,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.u16394.snacktime.activities.MainActivity" />
         </activity>
-
+        <activity
+            android:name=".activities.PromocoesActivity"
+            android:label="Promoções"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.u16394.snacktime.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.FiltrosActivity"
+            android:label="Filtrar Preferências"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.u16394.snacktime.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

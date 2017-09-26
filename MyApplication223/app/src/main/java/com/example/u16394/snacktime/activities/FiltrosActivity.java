@@ -11,17 +11,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.Spinner;
 
 import com.example.u16394.snacktime.R;
 
+import java.sql.Array;
 
-public class PromocoesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+public class FiltrosActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private String[] array_spinner;
+    private Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_promocoes);
+        setContentView(R.layout.activity_filtros);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -31,6 +37,14 @@ public class PromocoesActivity extends AppCompatActivity implements NavigationVi
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        array_spinner=new String[4];
+        array_spinner[0]="Mais Frequentados";
+        array_spinner[1]="Mais Relevantes";
+        array_spinner[2]="Menor Preço";
+        array_spinner[3]="Melhor Avaliação";
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, array_spinner);
+        spinner.setAdapter(adapter);
 
     }
 
@@ -72,16 +86,16 @@ public class PromocoesActivity extends AppCompatActivity implements NavigationVi
         int id = item.getItemId();
 
         if (id == R.id.nav_main) {
-            Intent it = new Intent(PromocoesActivity.this, MainActivity.class);
+            Intent it = new Intent(FiltrosActivity.this, MainActivity.class);
             startActivity(it);
         }else if (id == R.id.nav_categorias) {
-            Intent it = new Intent(PromocoesActivity.this,NovidadesActivity.class);
+            Intent it = new Intent(FiltrosActivity.this,NovidadesActivity.class);
             startActivity(it);
         } else if (id == R.id.nav_promocoes) {
-            Intent it = new Intent(PromocoesActivity.this,PromocoesActivity.class);
+            Intent it = new Intent(FiltrosActivity.this,PromocoesActivity.class);
             startActivity(it);
         } else if (id == R.id.nav_filtros) {
-            Intent it = new Intent(PromocoesActivity.this,FiltrosActivity.class);
+            Intent it = new Intent(FiltrosActivity.this,FiltrosActivity.class);
             startActivity(it);
         }
 

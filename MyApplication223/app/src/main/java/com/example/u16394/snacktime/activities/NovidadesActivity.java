@@ -26,7 +26,6 @@ import java.util.List;
 
 public class NovidadesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ListView lista;
     private RecyclerView horizontal_recycler_view;
     private RecyclerView vertical_recycler_view;
     private ArrayList<CategoriaModel> horizontalList;
@@ -79,6 +78,8 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         horizontalList.add(new CategoriaModel("Sorvetes","Teste", uriImgPath+"sorvete"));
         horizontalList.add(new CategoriaModel("Chopperia","Teste", uriImgPath+"chopp"));
         horizontalList.add(new CategoriaModel("Cafeteria","Teste", uriImgPath+"cafe"));
+        horizontalList.add(new CategoriaModel("Churrascaria","Teste", uriImgPath+"churras"));
+
         horizontalAdapter= new NovidadesActivity.HorizontalAdapter(horizontalList);
 
         LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -204,18 +205,17 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
         int id = item.getItemId();
 
         if (id == R.id.nav_main) {
-            Intent it = new Intent(NovidadesActivity.this,MainActivity.class);
+            Intent it = new Intent(NovidadesActivity.this, MainActivity.class);
             startActivity(it);
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_send2) {
-
-        } else if (id == R.id.nav_send) {
-
+        }else if (id == R.id.nav_categorias) {
+            Intent it = new Intent(NovidadesActivity.this,NovidadesActivity.class);
+            startActivity(it);
+        } else if (id == R.id.nav_promocoes) {
+            Intent it = new Intent(NovidadesActivity.this,PromocoesActivity.class);
+            startActivity(it);
+        } else if (id == R.id.nav_filtros) {
+            Intent it = new Intent(NovidadesActivity.this,FiltrosActivity.class);
+            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

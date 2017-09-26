@@ -11,15 +11,11 @@
             android:icon="@drawable/favorites"
             android:title="Categorias" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_promocoes"
             android:icon="@drawable/pricetag"
             android:title="Promoções" />
         <item
-            android:id="@+id/nav_manag2"
-            android:icon="@drawable/icecream"
-            android:title="Sobremesas" />
-        <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_filtros"
             android:icon="@drawable/settings2"
             android:title="Filtros" />
         <item
