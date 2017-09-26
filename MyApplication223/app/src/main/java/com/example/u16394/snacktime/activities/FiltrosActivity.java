@@ -6,13 +6,16 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.example.u16394.snacktime.R;
@@ -74,7 +77,12 @@ public class FiltrosActivity extends AppCompatActivity implements NavigationView
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            AlertDialog.Builder newAlert = new AlertDialog.Builder(FiltrosActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.novo_popup, null);
+            ImageView mImagem = (ImageView) findViewById(R.id.imageView);
+            newAlert.setView(mView);
+            AlertDialog dialog = newAlert.create();
+            dialog.show();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,11 +1,13 @@
 package com.example.u16394.snacktime.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.u16394.snacktime.R;
 
@@ -68,12 +72,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
 
+            AlertDialog.Builder newAlert = new AlertDialog.Builder(MainActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.novo_popup, null);
+            ImageView mImagem = (ImageView) findViewById(R.id.imageView);
+            newAlert.setView(mView);
+            AlertDialog dialog = newAlert.create();
+            dialog.show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -95,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent it = new Intent(MainActivity.this,FiltrosActivity.class);
             startActivity(it);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

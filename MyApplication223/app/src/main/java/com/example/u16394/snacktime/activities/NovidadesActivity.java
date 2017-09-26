@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -192,7 +193,12 @@ public class NovidadesActivity extends AppCompatActivity implements NavigationVi
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            AlertDialog.Builder newAlert = new AlertDialog.Builder(NovidadesActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.novo_popup, null);
+            ImageView mImagem = (ImageView) findViewById(R.id.imageView);
+            newAlert.setView(mView);
+            AlertDialog dialog = newAlert.create();
+            dialog.show();
         }
 
         return super.onOptionsItemSelected(item);

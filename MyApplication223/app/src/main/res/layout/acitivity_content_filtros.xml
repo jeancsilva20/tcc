@@ -173,6 +173,55 @@
 
 
         <TextView
+            android:id="@+id/textVie9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Faixa de Preço:"
+            android:textSize="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/checkBox10"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Executivo"
+            android:textSize="8dp"
+            android:layout_alignBaseline="@+id/textView12"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_toStartOf="@+id/checkBox6"
+            android:layout_marginEnd="12dp" />
+        <TextView
+            android:id="@+id/textVie1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barato"
+            android:textSize="8dp"
+            android:layout_alignBottom="@+id/textView13"
+            android:layout_alignTop="@+id/textView13"
+            android:layout_alignEnd="@+id/textVie9" />
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gourmet"
+            android:textSize="8dp"
+            android:layout_alignBaseline="@+id/textView13"
+            android:layout_alignBottom="@+id/textView13"
+            android:layout_alignEnd="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pechincha"
+            android:textSize="8dp"
+            android:layout_alignBottom="@+id/seekBar"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -263,7 +312,36 @@
             android:layout_below="@+id/textView9"
             android:layout_alignStart="@+id/checkBox13" />
 
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/textVie9"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/checkBox3" />
+
+        <TextView
+            android:id="@+id/textVie90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tempo de Espera"
+            android:textSize="20dp"
+            android:layout_below="@+id/textView13"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:inputType="time"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
